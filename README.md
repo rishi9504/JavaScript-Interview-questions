@@ -26,7 +26,7 @@ The second parameter of splice is the number of elements to remove. Note that sp
 
 
 
-
+# Code details:
 1.Number Guessing game: Stored in a single file with same name,this file is made for user to guess the randomly generated number according to the hints given in the browser window.
 
 

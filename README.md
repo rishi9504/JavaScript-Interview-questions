@@ -1,4 +1,4 @@
-# JavaScript-Examples-and-Questions
+# JavaScript-Interview-Questions
 
 # Questions:
 

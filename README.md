@@ -46,6 +46,8 @@ The reasoning behind strict mode is to prevent common coding mistakes and improv
 
 Additionally, strict mode was introduced to address some of the quirks and inconsistencies in earlier versions of JavaScript. By making certain behaviors of JavaScript code more predictable and consistent, strict mode helps developers write more reliable and maintainable code.
 
+Read more about strict mode here: https://johnresig.com/blog/ecmascript-5-strict-mode-json-and-more/
+
 # Code details:
 1.Number Guessing game: Stored in a single file with same name,this file is made for user to guess the randomly generated number according to the hints given in the browser window.
 

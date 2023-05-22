@@ -251,6 +251,72 @@ A closure in JavaScript is like keeping a reference (NOT a copy) to the scope at
 A closure is created when a function is declared; this closure is used to configure the execution context when the function is invoked.
 A new set of local variables is created every time a function is called.
 
+
+# 5. What is lexical environment?
+
+A lexical environment is a concept in programming languages that defines the association between identifiers (variables, functions, etc.) and their values or references within a specific scope. It is a data structure that holds variables and their values, as well as references to outer environments.
+
+In JavaScript, each time a function is invoked or a block of code is executed, a new lexical environment is created. A lexical environment consists of two main components:
+
+Environment Record: It is a record that holds all the identifiers (variables, functions, etc.) and their corresponding values within the current scope. It can be thought of as a container for variables and functions. The environment record can be either declarative (for variables defined with let, const, var, function declarations, etc.) or object-based (for variables created with this or function parameters).
+
+Outer Environment Reference: It is a reference to the outer lexical environment, forming a chain of nested environments. This reference allows for variable lookup in outer scopes when an identifier is not found in the current environment. It enables access to variables from the enclosing scopes or parent functions.
+
+Lexical environments are essential for scoping and variable resolution in programming languages. They provide the context for interpreting and executing code. When a variable is referenced, the lexical environment chain is traversed until the variable is found or an error is thrown if it is not found in any environment.
+
+Lexical environments also play a crucial role in function closures, where an inner function retains access to its outer function's variables even after the outer function has finished executing. The lexical environment chain allows the inner function to access and "close over" those variables.
+
+Overall, lexical environments are fundamental to how variables and functions are organized and accessed within a program's scope hierarchy, ensuring proper scoping and variable resolution during runtime.
+
+# 6. Difference between setTimeOut and setInterval in javascript.
+
+setTimeout and setInterval are both functions in JavaScript that allow you to schedule the execution of a function or a piece of code at a later time. However, there are some key differences between them:
+
+Execution Timing:
+
+setTimeout: It executes the provided function once after a specified delay (in milliseconds). After the delay, the function is executed only once.
+setInterval: It executes the provided function repeatedly at a specified interval (in milliseconds) until it is cleared using clearInterval. The function is executed multiple times at regular intervals.
+Number of Executions:
+
+setTimeout: It executes the function only once after the specified delay.
+setInterval: It executes the function repeatedly at the specified interval until clearInterval is called to stop the execution.
+Handling Multiple Invocations:
+
+setTimeout: If the delay is set to 0 or very low, the function will be placed in the event queue and executed as soon as the call stack is clear. If multiple setTimeout calls are made, each will be executed after its respective delay.
+setInterval: If the execution of a function takes longer than the specified interval, subsequent invocations may be delayed or skipped. The interval specifies the minimum time between function invocations.
+Stopping the Execution:
+
+setTimeout: The execution can be stopped by calling clearTimeout and passing the timeout identifier returned by the setTimeout function.
+setInterval: The execution can be stopped by calling clearInterval and passing the interval identifier returned by the setInterval function.
+In summary, setTimeout is used to execute a function once after a specified delay, while setInterval is used to execute a function repeatedly at a specified interval until it is explicitly stopped. Both functions have their own use cases depending on the desired timing and behavior of your code.
+
+# 7. What is event loop in JavaScript?
+
+The event loop is a crucial component of JavaScript's concurrency model, responsible for managing the execution of code in a single-threaded environment. It handles the asynchronous execution of tasks, such as handling user input, network requests, timers, and other events.
+
+In JavaScript, the event loop continuously checks for tasks in a loop, and when a task is found, it executes it. The event loop consists of two main components:
+
+Call Stack: The call stack is a data structure that keeps track of the currently executing function or code. Whenever a function is called, it is pushed onto the call stack, and when a function completes its execution, it is popped off the stack.
+
+Task Queue: The task queue (also known as the message queue) holds the tasks that are ready to be executed. These tasks include events like user interactions (e.g., click, keypress), timer callbacks, and network responses. When a task is ready, it is added to the task queue.
+
+The event loop follows a specific sequence to process tasks:
+
+The JavaScript engine starts executing the code synchronously, line by line, pushing functions onto the call stack.
+
+When an asynchronous task, such as a timer callback or an event, is encountered, it is offloaded to a separate thread (if available) and put into the task queue once it completes.
+
+The event loop continuously checks if the call stack is empty. If the call stack is empty and there are tasks in the task queue, it takes the first task from the queue and pushes it onto the call stack for execution.
+
+The task is executed on the call stack until completion or until another asynchronous task is encountered. In the latter case, the process repeats, and the new task is offloaded to the task queue.
+
+This cycle continues, with the event loop constantly checking for new tasks and pushing them onto the call stack for execution.
+
+The event loop allows JavaScript to handle asynchronous tasks efficiently without blocking the main thread. It ensures that time-consuming or blocking operations don't hinder the responsiveness of the user interface and enables the execution of code in a non-blocking, event-driven manner.
+
+It's important to note that the event loop is a simplified explanation of JavaScript's concurrency model, and there are more complex aspects to consider, such as microtasks, job queues, and browser-specific implementation details.
+
+
 # Code details:
 1.Number Guessing game: Stored in a single file with same name,this file is made for user to guess the randomly generated number according to the hints given in the browser window.
 

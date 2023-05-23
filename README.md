@@ -316,6 +316,19 @@ The event loop allows JavaScript to handle asynchronous tasks efficiently withou
 
 It's important to note that the event loop is a simplified explanation of JavaScript's concurrency model, and there are more complex aspects to consider, such as microtasks, job queues, and browser-specific implementation details.
 
+# 8. Why does A child class constructor cannot make use of this reference until the super() method has been called.
+
+In object-oriented programming, when you create a child class that extends a parent class, the child class inherits the properties and behaviors of the parent class. This inheritance includes the constructors of the parent class.
+
+When you create an instance of the child class, the constructor of the child class is called. At this point, the constructor needs to initialize the state of the child class and possibly perform some additional actions specific to the child class.
+
+However, before the child class constructor can do its own initialization, it needs to ensure that the parent class has been properly initialized. This is because the child class depends on the state and behavior provided by the parent class.
+
+To ensure proper initialization of the parent class, the child class constructor must call the constructor of the parent class using the super() method. The super() method is used to invoke the constructor of the parent class and allows the parent class to initialize its own state.
+
+Once the super() method is called and the parent class has been initialized, the child class constructor can safely make use of the this reference to access its own properties and methods, as well as any inherited properties and methods from the parent class.
+
+If the child class constructor were to use the this reference before the super() method is called, it could potentially access uninitialized properties or methods inherited from the parent class, leading to undefined behavior or errors. Therefore, it is a language rule to call the super() method as the first statement in the child class constructor to ensure proper initialization of the parent class before the child class can use the this reference.
 
 # Code details:
 1.Number Guessing game: Stored in a single file with same name,this file is made for user to guess the randomly generated number according to the hints given in the browser window.

@@ -330,6 +330,181 @@ Once the super() method is called and the parent class has been initialized, the
 
 If the child class constructor were to use the this reference before the super() method is called, it could potentially access uninitialized properties or methods inherited from the parent class, leading to undefined behavior or errors. Therefore, it is a language rule to call the super() method as the first statement in the child class constructor to ensure proper initialization of the parent class before the child class can use the this reference.
 
+
+# 9. Rest operator in Javascript.
+
+In JavaScript, the rest operator is represented by three consecutive dots (...) and is used in function declarations or array literals to capture multiple function arguments or array elements into a single array.
+
+When used as a function parameter, the rest operator allows a function to accept any number of arguments as an array. Here's an example:
+
+```
+function sum(...numbers) {
+  let total = 0;
+  for (let number of numbers) {
+    total += number;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3)); // Output: 6
+console.log(sum(4, 5, 6, 7, 8)); // Output: 30
+```
+
+In the example above, the sum function accepts any number of arguments and uses the rest operator (...numbers) to capture them into an array called numbers. This allows us to pass in multiple arguments, and they are automatically converted into an array within the function body.
+
+The rest operator can also be used with array literals to extract the remaining elements of an array into a new array. Here's an example:
+
+```
+const [first, second, ...rest] = [1, 2, 3, 4, 5];
+
+console.log(first); // Output: 1
+console.log(second); // Output: 2
+console.log(rest); // Output: [3, 4, 5]
+```
+In the example above, the rest operator (...rest) is used to capture the remaining elements of the array [1, 2, 3, 4, 5] into a new array called rest. The first element is assigned to the variable first, and the second element is assigned to second.
+
+The rest operator is a useful feature in JavaScript that allows you to work with variable numbers of arguments or extract parts of an array conveniently.
+
+# 10. shallow copy and deep copy in javascript
+
+In JavaScript, when you assign or copy objects or arrays, there are two common approaches: shallow copy and deep copy. These approaches determine how the original and copied objects are related and whether changes to one affect the other. Let's explore both concepts:
+
+Shallow Copy:
+
+Shallow copying creates a new object or array and copies the references of the original values. It means that changes made to the copied object's properties or array elements will also affect the original object.
+Shallow copying can be done using various methods, such as Object.assign(), the spread operator (...), and the Array.slice() method.
+Here's an example of shallow copying an object:
+```
+const originalObject = { a: 1, b: 2 };
+const shallowCopy = Object.assign({}, originalObject);
+
+// Modifying the shallow copy
+shallowCopy.b = 3;
+
+console.log(originalObject); // Output: { a: 1, b: 2 }
+console.log(shallowCopy); // Output: { a: 1, b: 3 }
+```
+In the example above, the Object.assign() method is used to create a shallow copy of the originalObject. Modifying the shallowCopy does not affect the originalObject, but changes to nested objects or arrays within the original object would still be reflected in the shallow copy.
+
+Deep Copy:
+
+Deep copying creates a completely independent copy of an object or array, including all nested objects and arrays. Changes made to the copied object or array do not affect the original.
+Deep copying is commonly implemented using recursion or specialized libraries like lodash's cloneDeep().
+Here's an example of deep copying an object:
+```
+const originalObject = { a: 1, b: { c: 2 } };
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
+
+// Modifying the deep copy
+deepCopy.b.c = 3;
+
+console.log(originalObject); // Output: { a: 1, b: { c: 2 } }
+console.log(deepCopy); // Output: { a: 1, b: { c: 3 } }
+```
+
+In the example above, JSON.stringify() is used to convert the originalObject to a JSON string, and then JSON.parse() is used to parse it back into a new object. This process creates a deep copy. Modifying the deepCopy object does not affect the originalObject.
+
+It's important to note that deep copying has some limitations. It may not work as expected for objects or arrays containing functions, circular references, or other non-serializable values. Additionally, deep copying can be slower and less efficient compared to shallow copying.
+
+Therefore, depending on your specific use case, you should choose the appropriate copying technique—shallow copy or deep copy—to achieve the desired behavior while considering the performance and limitations of each approach.
+
+# 11. What are map and reduce in Javascript?
+
+In JavaScript, map() and reduce() are two higher-order functions that are commonly used to work with arrays.
+
+map():
+
+The map() method creates a new array by iterating over an existing array and applying a provided function to each element. It returns a new array with the same length as the original array, where each element is the result of the applied function.
+The syntax for map() is as follows: array.map(callback(currentValue, index, array))
+Here's an example of using map() to double each element in an array:
+```
+const numbers = [1, 2, 3, 4, 5];
+
+const doubledNumbers = numbers.map((number) => number * 2);
+
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+
+```
+In the example above, the map() function is called on the numbers array. The provided callback function (number) => number * 2 multiplies each element by 2, and the resulting array [2, 4, 6, 8, 10] is returned.
+
+reduce():
+
+The reduce() method reduces an array to a single value by executing a provided function for each element of the array. It takes an accumulator and the current element as arguments and returns the accumulated result.
+The syntax for reduce() is as follows: array.reduce(callback(accumulator, currentValue, index, array), initialValue)
+Here's an example of using reduce() to calculate the sum of all elements in an array:
+```
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(sum); // Output: 15
+
+```
+In the example above, the reduce() function is called on the numbers array. The callback function (accumulator, currentValue) => accumulator + currentValue adds each element to the accumulator, starting from an initial value of 0. The final result, which is the sum of all elements, is 15.
+
+Both map() and reduce() are powerful tools for manipulating arrays in JavaScript. map() is useful when you want to transform each element of an array and create a new array with the transformed values. reduce() is handy when you need to perform calculations or aggregations on the elements of an array to derive a single value.
+
+# 12. Promise and Callback in Javascript.
+
+In JavaScript, both promises and callbacks are mechanisms used for handling asynchronous operations. They allow you to manage the flow of execution and handle the results of asynchronous tasks. However, they have different approaches and syntax.
+
+Callbacks:
+
+Callbacks are functions that are passed as arguments to other functions and executed once an asynchronous operation completes.
+Callbacks have been a traditional way of handling asynchronous operations in JavaScript before the introduction of promises.
+Here's an example of using a callback to handle an asynchronous operation:
+```
+function fetchData(callback) {
+  // Simulating an asynchronous operation
+  setTimeout(() => {
+    const data = 'Some data';
+    callback(null, data); // Invoke the callback with the result
+  }, 2000);
+}
+
+// Using the fetchData function with a callback
+fetchData((error, result) => {
+  if (error) {
+    console.error('Error:', error);
+  } else {
+    console.log('Result:', result);
+  }
+});
+
+```
+In the example above, the fetchData function performs an asynchronous operation (simulated with setTimeout) and invokes the provided callback function once the operation is complete. The callback is called with two parameters: error (if any) and result.
+
+Promises:
+
+Promises are objects that represent the eventual completion (or failure) of an asynchronous operation and allow you to chain operations using methods like .then() and .catch().
+Promises provide a more structured and readable way to handle asynchronous code compared to callbacks.
+Here's an example of using a promise to handle an asynchronous operation:
+```
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Simulating an asynchronous operation
+    setTimeout(() => {
+      const data = 'Some data';
+      resolve(data); // Resolve the promise with the result
+      // reject(new Error('Something went wrong')); // Reject the promise with an error
+    }, 2000);
+  });
+}
+
+// Using the fetchData function with a promise
+fetchData()
+  .then((result) => {
+    console.log('Result:', result);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+  ```
+In the example above, the fetchData function returns a promise. Inside the promise's executor function, you can perform the asynchronous operation and call resolve to fulfill the promise with a value or reject to reject it with an error. The promise is then used with .then() to handle the resolved value and .catch() to handle any errors.
+
+Promises provide better control flow and error handling compared to callbacks, especially when dealing with multiple asynchronous operations. They allow you to chain multiple asynchronous operations together and handle success or failure using the .then() and .catch() methods.
+
+It's worth mentioning that with the introduction of ES6 and later versions, promises have become the preferred approach for handling asynchronous operations in JavaScript. Promises provide a more intuitive and readable syntax and have additional features like async/await that further simplify asynchronous code.
 # Code details:
 1.Number Guessing game: Stored in a single file with same name,this file is made for user to guess the randomly generated number according to the hints given in the browser window.
 

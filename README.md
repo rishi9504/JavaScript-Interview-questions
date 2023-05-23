@@ -505,8 +505,4 @@ In the example above, the fetchData function returns a promise. Inside the promi
 Promises provide better control flow and error handling compared to callbacks, especially when dealing with multiple asynchronous operations. They allow you to chain multiple asynchronous operations together and handle success or failure using the .then() and .catch() methods.
 
 It's worth mentioning that with the introduction of ES6 and later versions, promises have become the preferred approach for handling asynchronous operations in JavaScript. Promises provide a more intuitive and readable syntax and have additional features like async/await that further simplify asynchronous code.
-# Code details:
-1.Number Guessing game: Stored in a single file with same name,this file is made for user to guess the randomly generated number according to the hints given in the browser window.
-
-
-2.Random Story Generator : This example will work on two files (main.js and index.html) for generating a random story each time the user clicks on the button. The US/UK radio buttons can be used to change the measurements provided in the story. User can also enter his name in the story using the top text field.
+# 

@@ -566,11 +566,35 @@
 
 2. ### What is a prototype chain
 
-   **Prototype chaining** is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.
+  In JavaScript, the prototype chain is a mechanism that allows objects to inherit properties and methods from other objects. It is a fundamental part of JavaScript's object-oriented programming paradigm based on prototypes.
 
-   The prototype on object instance is available through **Object.getPrototypeOf(object)** or **\_\_proto__** property whereas prototype on constructors function is available through **Object.prototype**.
+Every object in JavaScript has an internal property called `[[Prototype]]` (also known as "dunder prototype"). This `[[Prototype]]` property references another object, known as its prototype. When a property or method is accessed on an object, JavaScript first checks if the object itself has that property. If not, it looks up the prototype chain to find the property in the prototype object. If the property is still not found, the search continues up the prototype chain until it reaches the end of the chain (usually the `Object.prototype`).
 
-   ![Screenshot](images/prototype_chain.png)
+The prototype chain is created when an object is created based on a constructor function or using object literals. Here's an example to illustrate the concept:
+
+```javascript
+// Constructor function
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.sayHello = function() {
+  console.log("Hello, " + this.name);
+};
+
+// Creating objects
+var person1 = new Person("Alice");
+var person2 = new Person("Bob");
+
+person1.sayHello(); // Output: Hello, Alice
+person2.sayHello(); // Output: Hello, Bob
+```
+
+In the above code, the `Person` function serves as a constructor for creating person objects. The `Person.prototype` object is the prototype for all person objects. When `person1` and `person2` are created using the `new` keyword, they inherit the `sayHello` method from the `Person.prototype` object through the prototype chain.
+
+This means that when the `sayHello` method is called on `person1` or `person2`, JavaScript first checks if the method exists on the object itself. Since it doesn't, it follows the prototype chain and finds the method in the `Person.prototype` object, allowing it to be executed.
+
+The prototype chain provides a powerful mechanism for sharing and inheriting properties and methods among objects in JavaScript, allowing for efficient code reuse and object-oriented programming patterns.
 
    **[⬆ Back to Top](#table-of-contents)**
 

@@ -692,7 +692,7 @@ These are some of the common operations performed with JSON. They allow for easy
    JSON.stringify(object);
    ```
 
-   **[⬆ Back to Top](#table-of-contents)**
+  
 
 5. ### What is the purpose of the array slice method
 
@@ -839,7 +839,7 @@ const greet = () => {
 
 Lambda or arrow functions are commonly used in JavaScript for writing concise and expressive code, especially in functional programming paradigms or when passing functions as arguments to higher-order functions. However, it's important to consider the appropriate use cases, as they have some differences compared to traditional functions, particularly regarding `this` binding and lack of `arguments` object.
 
-    **[⬆ Back to Top](#table-of-contents)**
+  
 
 11. ### What is a first class function
 
@@ -856,11 +856,46 @@ Lambda or arrow functions are commonly used in JavaScript for writing concise an
 
 12. ### What is a first order function
 
-    First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
+    In JavaScript, a first-order function refers to a function that can be treated like any other value, such as a number or a string. It means that functions in JavaScript can be assigned to variables, passed as arguments to other functions, and returned from functions, just like any other data type.
 
-    ```javascript
-    const firstOrder = () => console.log("I am a first order function!");
-    ```
+Here are some key characteristics of first-order functions in JavaScript:
+
+1. Assignability: Functions can be assigned to variables or stored in data structures like arrays or objects. This allows you to treat functions as values and manipulate them dynamically.
+
+2. Passing as Arguments: Functions can be passed as arguments to other functions. This feature enables the concept of higher-order functions, which are functions that take other functions as arguments and use them to perform specific operations or transformations.
+
+3. Returning as Values: Functions can be returned as values from other functions. This allows for dynamic behavior and customization, where functions can generate and return new functions based on specific criteria or conditions.
+
+Here's an example to demonstrate first-order functions in JavaScript:
+
+```javascript
+// Assigning a function to a variable
+const add = function(a, b) {
+  return a + b;
+};
+
+// Passing a function as an argument
+function operate(operation, a, b) {
+  return operation(a, b);
+}
+
+const result = operate(add, 4, 5);
+console.log(result); // Output: 9
+
+// Returning a function from a function
+function createMultiplier(factor) {
+  return function(number) {
+    return number * factor;
+  };
+}
+
+const double = createMultiplier(2);
+console.log(double(6)); // Output: 12
+```
+
+In the above code, the `add` function is assigned to the `add` variable. The `operate` function takes an operation (a function) as an argument and applies it to `a` and `b`. The `createMultiplier` function returns a new function that multiplies a given number by the provided factor. These examples illustrate the ability to treat functions as first-class citizens in JavaScript.
+
+The concept of first-order functions is fundamental to functional programming in JavaScript, allowing for higher-order functions, function composition, and other powerful programming techniques. It enables the flexibility and modularity of code by treating functions as values that can be manipulated and combined in various ways.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -983,7 +1018,17 @@ Lambda or arrow functions are commonly used in JavaScript for writing concise an
 
 19. ### What is the reason to choose the name let as a keyword
 
-    `let` is a mathematical statement that was adopted by early programming languages like **Scheme** and **Basic**. It has been borrowed from dozens of other languages that use `let` already as a traditional keyword as close to `var` as possible.
+   The keyword "let" was chosen as a new variable declaration keyword in JavaScript to address some of the limitations and issues associated with the existing "var" keyword. The introduction of "let" in ECMAScript 6 (ES6) provided developers with a more flexible and scoped approach to variable declaration. Here are a few reasons behind choosing the name "let":
+
+1. Familiarity and Readability: The keyword "let" was chosen because it is a commonly used term in programming and carries a clear meaning. The term "let" is intuitive and can be easily understood as indicating a block-scoped variable.
+
+2. Contrast with "var": One of the primary motivations for introducing "let" was to address the issues related to the hoisting and lack of block scope associated with the "var" keyword. By choosing a distinct keyword like "let," it emphasizes the difference between "var" and "let" and helps avoid confusion regarding variable scoping.
+
+3. Similarity to Other Languages: The use of "let" as a keyword for block-scoped variables aligns with similar keywords used in other programming languages. For example, languages like C and Java use the "let" equivalent ("let" in C, "let" in Java) or similar keywords like "const" or "val" to declare block-scoped variables.
+
+4. Backward Compatibility: It was important to introduce a new keyword rather than repurpose an existing one to ensure backward compatibility with existing JavaScript code that uses "var" for variable declaration.
+
+By introducing the "let" keyword, JavaScript gained a more robust and predictable scoping mechanism, allowing developers to declare variables with block scope, such as within loops or conditional statements. The choice of "let" as the keyword aimed to provide clarity, consistency with other languages, and distinction from the existing "var" keyword.
 
     **[⬆ Back to Top](#table-of-contents)**
 

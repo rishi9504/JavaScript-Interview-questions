@@ -789,7 +789,55 @@ These are some of the common operations performed with JSON. They allow for easy
 
 10. ### What are lambda or arrow functions
 
-    An arrow function is a shorter syntax for a function expression and does not have its own **this, arguments, super, or new.target**. These functions are best suited for non-method functions, and they cannot be used as constructors.
+    In JavaScript, lambda functions, also known as arrow functions, are a concise way to define anonymous functions. They were introduced in ECMAScript 6 (ES6) as a shorthand syntax for creating functions.
+
+Lambda or arrow functions have the following syntax:
+
+```javascript
+// Syntax for arrow function with parameters
+(parameter1, parameter2, ...) => {
+  // function body
+}
+
+// Syntax for arrow function with a single parameter
+parameter => {
+  // function body
+}
+
+// Syntax for arrow function with no parameters
+() => {
+  // function body
+}
+```
+
+Here are some key features of lambda/arrow functions:
+
+1. Concise Syntax: Arrow functions provide a shorter and more readable syntax compared to traditional function expressions. They omit the `function` keyword and use a fat arrow (`=>`) instead.
+
+2. Lexical `this` Binding: Unlike traditional functions, arrow functions do not bind their own `this` value. Instead, they inherit the `this` value from the surrounding scope where they are defined. This behavior can be beneficial in certain scenarios where you want to preserve the context of `this` without using workarounds like `bind()` or creating a reference to `this` with `var self = this`.
+
+3. Implicit Return: Arrow functions have an implicit return feature. If the function body consists of a single expression, that expression is automatically returned without the need for an explicit `return` statement.
+
+4. No `arguments` Object: Arrow functions do not have their own `arguments` object. Instead, they inherit the `arguments` object from the surrounding scope.
+
+Here are a few examples to illustrate the usage of arrow functions:
+
+```javascript
+// Example 1: Arrow function with parameters
+const sum = (a, b) => {
+  return a + b;
+};
+
+// Example 2: Arrow function with implicit return
+const multiply = (a, b) => a * b;
+
+// Example 3: Arrow function with no parameters
+const greet = () => {
+  console.log("Hello!");
+};
+```
+
+Lambda or arrow functions are commonly used in JavaScript for writing concise and expressive code, especially in functional programming paradigms or when passing functions as arguments to higher-order functions. However, it's important to consider the appropriate use cases, as they have some differences compared to traditional functions, particularly regarding `this` binding and lack of `arguments` object.
 
     **[⬆ Back to Top](#table-of-contents)**
 

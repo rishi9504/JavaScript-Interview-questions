@@ -660,6 +660,24 @@ The prototype chain provides a powerful mechanism for sharing and inheriting pro
 
 4. ### What is JSON and its common operations
 
+JSON (JavaScript Object Notation) is a lightweight data interchange format that is widely used for storing and transmitting structured data between a server and a client, or between different components of an application. It is language-independent and based on a subset of the JavaScript object notation.
+
+Common operations with JSON include:
+
+1. Serialization: Converting data from a programming language-specific object or structure into a JSON string is called serialization. This allows the data to be transmitted or stored in a format that is easily readable and transferrable. Most programming languages provide built-in functions or libraries to serialize objects into JSON strings.
+
+2. Deserialization: Deserialization is the process of converting a JSON string back into a programming language-specific object or structure. This operation is commonly used when receiving JSON data from an external source, such as an API response. Programming languages typically provide functions or libraries to deserialize JSON strings into objects or data structures.
+
+3. Creating JSON Objects: JSON objects are unordered collections of key-value pairs. You can create a JSON object by defining key-value pairs using the syntax `{"key": "value"}`. Values can be strings, numbers, booleans, objects, arrays, or null.
+
+4. Accessing JSON Data: Once a JSON object is deserialized into a programming language-specific object, you can access its data using dot notation (e.g., `object.property`) or bracket notation (e.g., `object["property"]`). You can navigate through the JSON structure to access nested objects or arrays.
+
+5. Modifying JSON Data: JSON objects are often used to represent dynamic data. You can modify JSON data by updating the values associated with specific keys or by adding new key-value pairs. After modifying the data, you can serialize it back into a JSON string.
+
+6. Parsing JSON: Parsing JSON is the process of analyzing a JSON string and converting it into a data structure or object that can be used within a programming language. Most programming languages provide built-in functions or libraries to parse JSON strings into objects or data structures.
+
+These are some of the common operations performed with JSON. They allow for easy interchange of data between different systems and facilitate data communication and interoperability.
+
    **JSON** is a text-based data format following JavaScript object syntax, which was popularized by `Douglas Crockford`. It is useful when you want to transmit data across a network and it is basically just a text file with an extension of .json, and a MIME type of application/json
 
    **Parsing:** Converting a string to a native object

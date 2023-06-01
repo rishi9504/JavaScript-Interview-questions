@@ -1792,7 +1792,7 @@ It's important to note that while web workers are widely supported in modern web
 
     **[⬆ Back to Top](#table-of-contents)**
 
-62. ### What is callback in callback
+62. ### What are callbacks in callback
 
     You can nest one callback inside in another callback to execute the actions sequentially one by one. This is known as callbacks in callbacks.
 

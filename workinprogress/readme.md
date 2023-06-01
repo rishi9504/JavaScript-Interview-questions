@@ -1858,22 +1858,45 @@ It's important to note that while web workers are widely supported in modern web
 
 65. ### What is the purpose of the race method in promise
 
-    Promise.race() method will return the promise instance which is firstly resolved or rejected. Let's take an example of race() method where promise2 is resolved first
+   The `Promise.race()` method is used to create a new promise that resolves or rejects as soon as one of the promises in an iterable (such as an array) resolves or rejects. It returns a promise that settles with the result (either resolved or rejected) of the first promise that completes.
 
-    ```javascript
-    var promise1 = new Promise(function (resolve, reject) {
-      setTimeout(resolve, 500, "one");
-    });
-    var promise2 = new Promise(function (resolve, reject) {
-      setTimeout(resolve, 100, "two");
-    });
+Here's the basic syntax of `Promise.race()`:
 
-    Promise.race([promise1, promise2]).then(function (value) {
-      console.log(value); // "two" // Both promises will resolve, but promise2 is faster
-    });
-    ```
+```javascript
+Promise.race(iterable);
+```
 
-    **[⬆ Back to Top](#table-of-contents)**
+The `iterable` parameter is an array or any other iterable object containing promises or values. It can contain a mix of promises and non-promise values.
+
+The behavior of `Promise.race()` can be summarized as follows:
+
+1. If the iterable is empty, the returned promise will never settle and will remain pending indefinitely.
+2. If the iterable contains no promises and only non-promise values, the returned promise will immediately resolve with the first non-promise value encountered.
+3. If any of the promises in the iterable resolve or reject, the returned promise settles with the same result (either resolved or rejected) as that promise.
+
+Here's an example to illustrate the usage of `Promise.race()`:
+
+```javascript
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'Promise 1 resolved');
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(reject, 200, 'Promise 2 rejected');
+});
+
+Promise.race([promise1, promise2])
+  .then(result => {
+    console.log('Race resolved:', result);
+  })
+  .catch(error => {
+    console.log('Race rejected:', error);
+  });
+```
+
+In the example above, two promises `promise1` and `promise2` are created. `promise1` resolves after a delay of 100 milliseconds, while `promise2` rejects after a delay of 200 milliseconds. The `Promise.race()` method is then used to create a new promise that settles as soon as one of these promises resolves or rejects. In this case, since `promise1` resolves earlier, the returned promise resolves with the value `'Promise 1 resolved'`. The `then()` method is used to handle the resolved state, and the `catch()` method is used to handle the rejected state.
+
+The `Promise.race()` method is particularly useful when you have multiple asynchronous operations and want to respond to the first one that completes, regardless of whether it resolves or rejects. It allows you to efficiently handle situations where you only need the result of the fastest operation among several concurrent promises.
 
 66. ### What is a strict mode in javascript
 

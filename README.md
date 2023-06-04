@@ -1,6 +1,6 @@
 # JavaScript-Interview-Questions
 
-# Questions:
+# Extra Questions:
 
 # 1. How can I remove a specific item from an array in JavaScript?
 

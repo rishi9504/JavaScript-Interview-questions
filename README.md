@@ -1070,7 +1070,9 @@ By introducing the "let" keyword, JavaScript gained a more robust and predictabl
 
 21. ### What is the Temporal Dead Zone
 
-    The Temporal Dead Zone is a behavior in JavaScript that occurs when declaring a variable with the let and const keywords, but not with var. In ECMAScript 6, accessing a `let` or `const` variable before its declaration (within its scope) causes a ReferenceError. The time span when that happens, between the creation of a variable’s binding and its declaration, is called the temporal dead zone.
+   The Temporal Dead Zone (TDZ) in JavaScript is a behavior associated with let, const, and class declarations. It's the period between entering the scope where the variable is declared and the actual declaration and initialization of the variable.
+
+During this period, any reference to the variable will result in a ReferenceError, because the JavaScript engine doesn't allow access to uninitialized variables. This is what makes let, const, and class behave as if they are not hoisted.
 
     Let's see this behavior with an example,
 

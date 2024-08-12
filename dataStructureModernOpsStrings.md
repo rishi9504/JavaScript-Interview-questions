@@ -1,4 +1,4 @@
-Destructuring Arrays
+### Destructuring Arrays
 
 Destructuring in JavaScript provides a convenient way to extract values from arrays or objects and assign them to variables. This feature can make your code cleaner and more readable, especially when dealing with complex data structures.
 
@@ -139,7 +139,7 @@ console.log(fourth); // 4
 - **Destructuring** is useful in various scenarios such as function returns and managing multiple variables.
 
 
-Destructuring Objects
+### Destructuring Objects
 
 Destructuring objects in JavaScript allows you to unpack properties from objects into individual variables, providing a concise and readable way to access and assign values.
 
@@ -281,37 +281,37 @@ let { property1, property2, ...rest } = object;
 Destructuring simplifies code by reducing the amount of repetitive code needed to access object properties and can make your code more readable and maintainable.
 
 
-The spread operators (...)
-Rest pattern and parameters
-Short Circuiting (&& and ||)
-The nullish coalescing operator (??)
-Logical assignment Operators
-Looping arrays: the for of loop
-enhanced object literals
-optional chaining (?.)
-looping objects : Object keys,values and entries
-sets
-maps: fundamentals
-maps: iteration
-Strings in js
-string methods
+### The spread operators (...)
+### Rest pattern and parameters
+### Short Circuiting (&& and ||)
+### The nullish coalescing operator (??)
+### Logical assignment Operators
+### Looping arrays: the for of loop
+### enhanced object literals
+### optional chaining (?.)
+### looping objects : Object keys,values and entries
+### sets
+### maps: fundamentals
+### maps: iteration
+### Strings in js
+### string methods
 
-simple array methods
-the new at method
-lopping arrays : forEach
-forEach with maps and sets
-creating dom elements
-data transformation : map, reduce and filter
-map method in detail
-filter method in detail
-reduce method and detail
-chaining methods
-find method
-finIndex method
-flat and flatmap
-sorting arrays
-creating and filling arrays
-array methods
+### simple array methods
+### the new at method
+### lopping arrays : forEach
+### forEach with maps and sets
+### creating dom elements
+### data transformation : map, reduce and filter
+### map method in detail
+### filter method in detail
+### reduce method and detail
+### chaining methods
+### find method
+### finIndex method
+### flat and flatmap
+### sorting arrays
+### creating and filling arrays
+### array methods
 
 
 

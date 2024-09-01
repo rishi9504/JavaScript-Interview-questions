@@ -1026,7 +1026,6 @@ if (value) {
 }
 ```
 
-### Summary
 
 - **Falsy values**: `false`, `0`, `-0`, `0n`, `""`, `null`, `undefined`, `NaN`.
 - **Truthy values**: Everything else, including non-zero numbers, non-empty strings, objects, arrays, functions, symbols, and non-zero BigInts.
@@ -1378,7 +1377,6 @@ switch (true) {
 }
 ```
 
-### Summary
 
 - **`switch` Statement**: Evaluates an expression and matches it against `case` values.
 - **`break`**: Exits the `switch` block; prevents fall-through.

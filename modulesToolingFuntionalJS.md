@@ -380,7 +380,6 @@ loadModule();
 - **Reusability**: Code can be easily reused across different parts of an application or in different projects.
 - **Maintainability**: Easier to update and maintain code when it is divided into modules.
 
-### Summary
 
 JavaScript modules provide a powerful and standardized way to structure and manage code. ES6 modules are the modern approach and are widely supported in both browser environments and Node.js. Understanding the various module systems and their features helps in building scalable and maintainable applications.
 
@@ -536,7 +535,6 @@ You can import all exported values from a module as a single object. This is use
   console.log(math.add(2, 3)); // 5
   ```
 
-### Summary
 
 - **Named Exports**: Allow exporting multiple values from a module. Use `export` and import using `{ }`.
 - **Default Exports**: Allow exporting a single value from a module. Import using any name.
@@ -631,7 +629,6 @@ import { config } from './configLoader.js';
 console.log(config);
 ```
 
-### Summary
 
 Top-level `await` simplifies working with asynchronous operations in ES modules by allowing `await` to be used directly at the module's top level. This leads to cleaner, more readable code and can be particularly useful when dealing with modules that require asynchronous data fetching or initialization.
 
@@ -764,7 +761,6 @@ console.log(getPrivateVar()); // I am private
 callPrivateFunction(); // This is a private function
 ```
 
-### Summary
 
 The module pattern is a powerful design pattern for managing code by encapsulating data and functionality, while exposing only the necessary parts of the module. It is often implemented using IIFE and is still useful in many scenarios. However, with the advent of ES6 modules, you can achieve similar modularization with a more modern and standardized approach.
 
@@ -915,7 +911,6 @@ console.log(pi); // 3.14
 console.log(add(2, 3)); // 5
 ```
 
-### Summary
 
 - **CommonJS** is a module system primarily used in Node.js and server-side JavaScript.
 - **`require`** is used to import modules, and **`module.exports`** is used to export functionality.
@@ -1058,7 +1053,6 @@ The `package.json` file contains essential information about your project and it
 - **`author`**: The author of the project.
 - **`license`**: The license under which the project is released.
 
-### Summary
 
 NPM is a crucial tool for managing JavaScript projects, providing functionality for installing, updating, and managing dependencies and scripts. Understanding NPM and its commands is essential for efficient JavaScript development, whether you're working on server-side applications with Node.js or front-end projects with modern JavaScript frameworks and libraries.
 
@@ -1204,7 +1198,6 @@ For example:
 npm run start
 ```
 
-### Summary
 
 - **Parcel** is a modern bundler with zero configuration, automatic asset handling, and support for modern JavaScript features.
 - **NPM Scripts** are a flexible way to define and manage custom commands for various tasks, including development, testing, and production builds.
@@ -1335,7 +1328,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 ```
 
-### Summary
 
 - **Babel**: A tool that transforms modern JavaScript syntax into a compatible version for older environments. Configure Babel using `.babelrc` or `babel.config.json`.
 - **Polyfilling**: Adding support for new JavaScript features in older environments by including fallback implementations. Use packages like `core-js` and `regenerator-runtime`.
@@ -1423,7 +1415,6 @@ console.log(result); // 29 (i.e., 9 + 16)
 
 Here, you're using declarative array methods (`map`, `filter`, `reduce`) in a functional manner to process the data.
 
-### Summary
 
 - **Declarative Programming**: Emphasizes *what* you want to do without specifying *how*. It focuses on high-level abstractions and reducing boilerplate.
 - **Functional Programming**: Emphasizes using functions, immutability, pure functions, and higher-order functions to create reusable and predictable code.

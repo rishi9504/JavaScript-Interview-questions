@@ -1307,7 +1307,6 @@ When changes are made to the DOM, the browser must re-render the page. This invo
 - **Batch DOM Changes**: Making multiple changes in a single operation can be more efficient than making many individual changes.
 - **Minimize Reflows**: Avoid frequent layout calculations, as they can be costly in terms of performance.
 
-### 7. Summary
 
 The DOM provides a structured representation of a web page, allowing developers to dynamically interact with and manipulate the page using JavaScript. By understanding how to access, modify, and manage the DOM, you can create more dynamic and interactive web applications.
 

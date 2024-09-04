@@ -22,4 +22,4 @@
 
 
 
-[Unsorted questions](https://github.com/rishi9504/JavaScript-Interview-questions/blob/master/unsortedQuestions.md)
+[Interview questions](https://github.com/rishi9504/JavaScript-Interview-questions/blob/master/unsortedQuestions.md)

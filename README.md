@@ -1,6 +1,7 @@
 
 # JavaScript Interview Questions & Answers
 
+
 1. [JS Basics](https://github.com/rishi9504/JavaScript-Interview-questions/blob/master/jsBasics.md)
 
 2. [OOPS JS](https://github.com/rishi9504/JavaScript-Interview-questions/blob/master/OOPSJs.md)
@@ -19,6 +20,7 @@
 
 9. [Number and Dates in JS](https://github.com/rishi9504/JavaScript-Interview-questions/blob/master/numbersAndDatesJS.md)
 
+10. [All Chapters Combined](https://github.com/rishi9504/JavaScript-Interview-questions/blob/master/combinedAllChapters.md)
 
 
 
